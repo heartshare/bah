@@ -27,6 +27,7 @@ function _M.pg_escape(str)
 end
 
 -- get domain list
+-- http://stackoverflow.com/a/23592008
 function _M.domain_list()
   local tlds = {}
   local domains = [[.ac.ad.ae.aero.af.ag.ai.al.am.an.ao.aq.ar.arpa.as.asia.at.au
