@@ -42,7 +42,7 @@ function _M.domain_list()
     .ws.xxx.ye.yt.yu.za.zm.zr.zw]]
 
   for tld in domains:gmatch('%w+') do 
-    tlds[tld] = true 
+    table.insert(tlds, tld) 
   end
   return tlds
 end
@@ -53,11 +53,11 @@ function _M.valid_url(str)
   local regex = '([%w_.~!*:@&+$/?%%#-]-)(%w[-.%w]*%.)(%w+)(:?)(%d*)(/?)([%w_.~!*:@&+$/?%%#=-]*)'
   local prot, subd, tld, colon, port, slash, path = str:match(regex)
   -- check if protocol is on the supported list
-  if not has_value(protocol_list, prot) then return false
+  if not has_value(protocol_list, prot) then return false end
   -- check for valid tld
-  if not has_value(_M.domain_list, tld) then return false
+  if not has_value(_M.domain_list(), tld) then return false end
   -- check for valid port
-  if port and  port + 0 > 65536 then return false
+  if port ~= '' and tonumber(port) > 65536 then return false end
   -- success
   return true
 end
