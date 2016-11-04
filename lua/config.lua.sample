@@ -1,0 +1,13 @@
+local config = {
+  url = 'https://bah.my',
+  db  = {
+    host = '127.0.0.1',
+    port = 5432,
+    database = 'bah',
+    user = 'your-postgresql-user',
+    password = 'your-postgresql-password',
+    compact = false 
+  }
+}
+
+return config
