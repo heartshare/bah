@@ -5,4 +5,14 @@ Fast efficient low memory url shortner using openresty
 
 See live demo at [https://bah.my](https://www.bah.my)
 
-# Install
+# Install dependencies
+
+    #apt-get install postgresql luarocks
+    #luarocks install lua-resty-postgres
+
+
+# Run the server
+    #cd /home/rogon/bah
+    #./server.sh
+
+
