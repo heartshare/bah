@@ -9,9 +9,8 @@ if not long_url or util.valid_url(long_url) == false then
   return ngx.say('Missing or invalid url') 
 end 
 
-local res, err = db:find_long_one(long_url)
-
 -- we have record of the long url
+local res, err = db:find_long_one(long_url)
 if res and  #res > 0 then
   return ngx.say(config.url .. '/' .. res[1].short_url) 
 end
