@@ -1,5 +1,5 @@
 # Bah
-Fast efficient low memory url shortner using openresty 
+Fast efficient low memory url shortner in Nginx + Lua (openresty) 
 
 # Demo
 
