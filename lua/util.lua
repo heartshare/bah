@@ -1,5 +1,6 @@
 local _M = {}
 
+-- check if the given value exists in the given table
 function has_value(tbl, value)
   for i, v in pairs(tbl) do
     if v == value then return true end
@@ -7,6 +8,7 @@ function has_value(tbl, value)
   return false
 end
 
+-- the character will do for now
 function _M.shorten(long_url)
   math.randomseed(os.time() + math.random(0, 100000))
   local s = ""
@@ -19,7 +21,7 @@ function _M.shorten(long_url)
   return s
 end
 
--- escape postgresql string
+-- simple implementation of escape postgresql string
 function _M.pg_escape(str)
   return "'" .. string.gsub(str, "'", "''") .. "'"
 end
