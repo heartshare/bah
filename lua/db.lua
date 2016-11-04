@@ -17,6 +17,7 @@ function _M.save(self, long_url, short_url)
   local sql = string.format(qs, util.pg_escape(long_url), util.pg_escape(short_url)) 
   local ok, err = db:query(sql)
   db:set_keepalive(0, 100)
+  if not ok then ngx.say(sql) end
   return ok, err 
 end
 
