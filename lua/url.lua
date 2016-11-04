@@ -5,8 +5,6 @@ local db     = require 'db'
 local args = ngx.req.get_uri_args()
 local long_url = args['url']
 
--- TODO: verify url format
-
 if not long_url then 
   return ngx.say('Missing Url') 
 end 
